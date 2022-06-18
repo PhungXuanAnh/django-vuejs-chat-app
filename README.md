@@ -2,7 +2,15 @@
   <img width="250" height="105" src="chatire-frontend/src/assets/logotype.png">
 </p>
 
-# chatire
+
+- [1. chatire](#1-chatire)
+  - [1.1. Running the code](#11-running-the-code)
+    - [1.1.1. Vue](#111-vue)
+    - [1.1.2. Django](#112-django)
+    - [1.1.3. RabbitMQ](#113-rabbitmq)
+    - [1.1.4. WebSocket server](#114-websocket-server)
+
+# 1. chatire
 
 Real time Chat application built with Vue, Django, RabbitMQ and uWSGI WebSockets.
 
@@ -19,9 +27,9 @@ The tutorial is split into several parts:
 - Part 5 [uWSGI WebSockets](https://danidee10.github.io/2018/01/13/realtime-django-5.html)
 - Part 6 [Extras](https://danidee10.github.io/2018/03/12/real-time-django-6.html)
 
-## Running the code
+## 1.1. Running the code
 
-### Vue
+### 1.1.1. Vue
 
 Navigate to the `chatire-frontend directory`:
 
@@ -41,7 +49,7 @@ Run the webpack dev server (starts on localhost:8080):
 npm run dev
 ```
 
-### Django
+### 1.1.2. Django
 
 To get the Django server running:
 
@@ -57,11 +65,11 @@ Run django's development server (starts on localhost:8000):
 python manage.py runserver
 ```
 
-### RabbitMQ
+### 1.1.3. RabbitMQ
 
 Chatire uses RabbitMQ to bridge the django application and the uWSGI WebSocket server. The installation process varies. Check the [docs](https://www.rabbitmq.com/download.html) on how you can install it for your platform.
 
-### WebSocket server
+### 1.1.4. WebSocket server
 
 Chatire uses `uWSGI` as it's websocket server, if you've already installed the requirements from `requirements.txt` if should already be installed.
 
@@ -72,7 +80,3 @@ uwsgi --http :8081 --gevent 100 --module websocket --gevent-monkey-patch --maste
 ```
 
 This starts uwsgi with 100 gevent (greenlet) threads. You can increase it if you want to.
-
-
-# Acknowledgements
-Thanks to [@inhit](https://github.com/ihtiht) for the Logo!
