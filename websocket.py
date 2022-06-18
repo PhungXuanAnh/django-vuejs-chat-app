@@ -3,7 +3,9 @@
 import sys
 
 import pika
+# reference: https://uwsgi-docs.readthedocs.io/en/latest/WebSockets.html
 import uwsgi
+
 
 
 def application(env, start_response):
