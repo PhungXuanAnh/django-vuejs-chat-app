@@ -63,7 +63,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'chatire.urls'
+ROOT_URLCONF = 'chatire_backend.urls'
 
 TEMPLATES = [
     {
@@ -81,7 +81,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'chatire.wsgi.application'
+WSGI_APPLICATION = 'chatire_backend.wsgi.application'
 
 
 # Database
