@@ -10,7 +10,7 @@ from .models import (
 from rest_framework import permissions
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from notifications.signals import notify
+from notifications.utils import notify
 
 
 class ChatSessionView(APIView):
@@ -47,17 +47,17 @@ class ChatSessionView(APIView):
 
         owner = deserialize_user(owner)
         members = [
-            deserialize_user(chat_session.user) 
+            deserialize_user(chat_session.user)
             for chat_session in chat_session.members.all()
         ]
         members.insert(0, owner)  # Make the owner the first member
 
-        return Response ({
+        return Response({
             'status': 'SUCCESS', 'members': members,
             'message': '%s joined that chat' % user.username,
             'user': deserialize_user(user)
         })
-    
+
 
 class ChatSessionMessageView(APIView):
     """Create/Get Chat session messages."""
@@ -69,8 +69,8 @@ class ChatSessionMessageView(APIView):
         uri = kwargs['uri']
 
         chat_session = ChatSession.objects.get(uri=uri)
-        messages = [chat_session_message.to_json() 
-            for chat_session_message in chat_session.messages.all()]
+        messages = [chat_session_message.to_json()
+                    for chat_session_message in chat_session.messages.all()]
 
         return Response({
             'id': chat_session.id, 'uri': chat_session.uri,
@@ -100,11 +100,11 @@ class ChatSessionMessageView(APIView):
                 'message': chat_session_message.to_json()
             }
         }
-        notify.send(
-            sender=self.__class__,**notif_args, channels=['websocket']
-        )
 
-        return Response ({
+        # reference: https://django-notifs.readthedocs.io/en/stable/advanced-usage.html?highlight=channels#websockets
+        notify(**notif_args, channels=['websocket'])
+
+        return Response({
             'status': 'SUCCESS', 'uri': chat_session.uri, 'message': message,
             'user': deserialize_user(user)
         })
