@@ -16,16 +16,16 @@ Real time Chat application built with Vue, Django, RabbitMQ and uWSGI WebSockets
 
 ![chatire gif demo](./chatire.gif)
 
-This repo contains the code for my tutorial **[Realtime django: Build a Chat application with Django, RabbitMQ and Vue.js](https://danidee10.github.io/2018/01/01/realtime-django-1.html)**
+This repo contains the code for my tutorial **[Realtime django: Build a Chat application with Django, RabbitMQ and Vue.js](docs/part1.md)**
 
 The tutorial is split into several parts:
 
-- Part 1: [Introduction and Setup](https://danidee10.github.io/2018/01/01/realtime-django-1.html)
-- Part 2: [Authentication and User Management](https://danidee10.github.io/2018/01/03/realtime-django-2.html)
-- Part 3: [Build an API with django rest framework](https://danidee10.github.io/2018/01/07/realtime-django-3.html)
-- Part 4 [Plug the Vue frontend to the django API](https://danidee10.github.io/2018/01/10/realtime-django-4.html)
-- Part 5 [uWSGI WebSockets](https://danidee10.github.io/2018/01/13/realtime-django-5.html)
-- Part 6 [Extras](https://danidee10.github.io/2018/03/12/real-time-django-6.html)
+- Part 1: [Introduction and Setup](docs/part1.md)
+- Part 2: [Authentication and User Management](docs/part2.md)
+- Part 3: [Build an API with django rest framework](docs/part3.md)
+- Part 4 [Plug the Vue frontend to the django API](docs/part4.md)
+- Part 5 [uWSGI WebSockets](docs/part5.md)
+- Part 6 [Extras](docs/part6.md)
 
 ## 1.1. Running the code
 
